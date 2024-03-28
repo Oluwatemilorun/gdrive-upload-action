@@ -1,0 +1,19 @@
+{
+  "env": { "node": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "ecmaVersion": 9, "sourceType": "module" },
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-unused-vars": "error"
+  },
+  "plugins": ["@typescript-eslint"]
+}
