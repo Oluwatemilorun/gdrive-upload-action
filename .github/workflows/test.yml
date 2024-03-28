@@ -1,0 +1,50 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    name: Build
+
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, macos-latest, windows-latest]
+      fail-fast: false
+
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Node 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Compile
+      run: npm run build
+
+    - name: Lint
+      run: npm run lint
+
+    - name: Format
+      run: npm run format-check
+
+    - name: Example Upload
+      uses: ./
+      with:
+        credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
+        folder-id: ${{ secrets.GDRIVE_FOLDER_ID }}
+        path: test/img/cat.jpeg
