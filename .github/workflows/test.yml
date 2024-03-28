@@ -48,3 +48,4 @@ jobs:
         credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
         folder-id: ${{ secrets.GDRIVE_FOLDER_ID }}
         path: test/img/cat.jpeg
+        overwrite: true
