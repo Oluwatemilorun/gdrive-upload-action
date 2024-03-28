@@ -5,9 +5,17 @@ import { findFilesToUpload } from './search';
 import { NoFileOptions } from './enums';
 
 async function run(): Promise<void> {
-  const { name, path, folderId, overwrite, ifNoFilesFound, recreateDirStructure } =
-    getInputs();
-  const drive = getDrive();
+  const {
+    credentials,
+    name,
+    path,
+    folderId,
+    overwrite,
+    ifNoFilesFound,
+    recreateDirStructure,
+  } = getInputs();
+
+  const drive = getDrive(credentials);
   const searchResult = await findFilesToUpload(path);
 
   if (searchResult.filesToUpload.length === 0) {

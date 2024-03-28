@@ -1,11 +1,9 @@
 import * as fs from 'fs';
 import { google, drive_v3 } from 'googleapis';
 
-import { getInputs } from './inputs';
 import { Scopes } from './constants';
 
-export function getDrive(): drive_v3.Drive {
-  const { credentials } = getInputs();
+export function getDrive(credentials: Record<string, string>): drive_v3.Drive {
   const auth = new google.auth.GoogleAuth({
     scopes: Scopes,
     credentials,
