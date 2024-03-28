@@ -1,4 +1,4 @@
-export const Scopes = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
+export const Scopes = ['https://www.googleapis.com/auth/drive'];
 
 export const Inputs = {
   /**
