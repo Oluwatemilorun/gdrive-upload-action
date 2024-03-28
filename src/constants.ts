@@ -1,4 +1,7 @@
-export const Scopes = ['https://www.googleapis.com/auth/drive'];
+export const Scopes = [
+  'https://www.googleapis.com/auth/drive.file',
+  'https://www.googleapis.com/auth/drive',
+];
 
 export const Inputs = {
   /**
