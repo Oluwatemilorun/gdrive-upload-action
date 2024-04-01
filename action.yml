@@ -1,6 +1,6 @@
 name: 'Upload to Google Drive'
 description: 'Upload files to Google Drive'
-author: 'GitHub'
+author: 'Isaac Oluwatemilorun'
 inputs:
   credentials:
     description: 'Base64 encoded Google service account credentials'
@@ -30,7 +30,7 @@ inputs:
     required: false
     default: 'warn'
   recreate-directory-structure:
-    description: 'If true, recreate the directory structure of the source file relative to the folderId'
+    description: 'If true, recreate the directory structure of the source file relative to the folder-id'
     required: false
     default: false
 runs:
